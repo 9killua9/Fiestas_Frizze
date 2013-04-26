@@ -27,10 +27,10 @@ function cargaLoadDelSite(mod)
 function cargaFuncionesEvAc(id)
 {   
     $("form[name=guardaAsociado] input[name=id]").val(id);
-    $data = 'h=traeInfo&id='+id;
+    $data = 'donde='+$("#donde").html()+'&h=traeInfo&id='+id;
     lmPost($url,$data,"traeInfo");
     /* Carga los datos de los textos */
-    /*$data = 'h=traeFotos';
+    /*$data = 'donde='+$("#donde").html()+'&h=traeFotos';
     lmPost($urlFbk,$data,"traeFotos");*/
     cargaHome();
 
@@ -42,7 +42,7 @@ function cargaFuncionesEvAc(id)
         if($("form[name=guardaAsociado] input[name=email]").val() != '' )
             if( validar_email($("form[name=guardaAsociado] input[name=email]").val()) )
             {                
-                $data = 'h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
+                $data = 'donde='+$("#donde").html()+'&h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
                 lmPost($url,$data,"cargaEmail");
             }
             else
@@ -62,7 +62,7 @@ function cargaFuncionesEvAc(id)
 }
 function cargaFuncionesEvPas(id)
 {
-    $data = 'h=traeInfo&id='+id;
+    $data = 'donde='+$("#donde").html()+'&h=traeInfo&id='+id;
     lmPost($url,$data,"traeInfoPas");
     cargaHome();
 }
@@ -74,8 +74,8 @@ function cargaInicio()
 {   
     $("form[name=cargaInicio]").submit(function(a){
             a.preventDefault();
-            provContDonde($("select[name=cambiaProvincia]").val(),0);
-
+            id = $("select[name=cambiaProvincia]").val();
+            provContDonde(id,"0");
     });
     
     $(".logo").click(function(){
@@ -87,7 +87,7 @@ function buscaPorMes(mes)
     var tam=35;
     $(".mesesDelAno").animate({height:tam},500,function(){});   
 
-    $data = 'h=cargaEventosHomeMes&mes='+mes;
+    $data = 'donde='+$("#donde").html()+'&h=cargaEventosHomeMes&mes='+mes;
     lmPost($url,$data,"cargaEventosHome");    
 }
 function cargaHome()
@@ -99,7 +99,7 @@ function cargaHome()
 
 function homeSeccion()
 {
-    $data = 'h=cargaEventosHome';
+    $data = 'donde='+$("#donde").html()+'&h=cargaEventosHome';
     lmPost($url,$data,"cargaEventosHome");
 
     cargaInicio();
@@ -158,7 +158,7 @@ function buscadorSeccion()
 }
 function buscadorDeDatos(buscar)
 {
-    $data = 'h=traeInfoParaElBuscador&buscar='+buscar;
+    $data = 'donde='+$("#donde").html()+'&h=traeInfoParaElBuscador&buscar='+buscar;
     lmPost($url,$data,"traeInfoParaElBuscador");
 }
 function cargaHome()
@@ -179,94 +179,9 @@ function cargaHome()
         return false;
 }
 
-
-function provCont(id,p)
-{
-    switch(id)
-    {
-        case 0:
-            //Buenos aires
-            prov = "Buenos Aires";
-        break;
-        case 3:
-            prov = "Cordoba";
-        break;
-        case 2:
-            prov = "Entre Rios";
-        break;
-        case 12:
-            prov = "Jujuy";
-        break;
-        case 16:
-            prov = "Mendoza";
-        break;
-        case 17:
-            prov = "Neuquen";
-        break;
-        case 10:
-            prov = "Salta";
-        break;
-        case 15:
-            prov = "San Juan";
-        break;
-        case 20:
-            prov = "Santa Cruz";
-        break;
-        case 4:
-            prov = "Santa Fe";
-        break;
-        case 9:
-            prov = "Santiago del Estero";
-        break;
-        case 11:
-            prov = "Tucuman";
-        break;
-        case 12:
-            prov = "Jujuy";
-        break;
-        case 8:
-            prov = "Catamarca";
-        break;
-        case 14:
-            prov = "Chaco";
-        break;
-        case 13:
-            prov = "Formosa";
-        break;
-        case 5:
-            prov = "Corrientes";
-        break;
-        case 6:
-            prov = "Misiones";
-        break;
-        case 7:
-            prov = "La Rioja";
-        break;
-        case 1:
-            prov = "San Luis";
-        break;
-        case 23:
-            prov = "La Pampa";
-        break;
-        case 18:
-            prov = "Rio Negro";
-        break;
-        case 21:
-            prov = "Tierra del Fuego";
-        break;
-        case 19:
-            prov = "Chubut";
-        break;
-        default:
-            prov = "no disponible";
-        break;
-    }
-    console.log(prov);
-    $("#muestraProv").html(prov)
-}
-
 function provContDonde(id,p)
 {
+    id = parseInt(id);
     switch(id)
     {
         case 0:
@@ -346,9 +261,10 @@ function provContDonde(id,p)
             prov = "no disponible";
         break;
     }
-
     $data = 'h=donde&donde='+prov;
     lmPost($url,$data,"donde");
+
+    $("#donde").html(prov);
 }
 
 function slideHrizontal()
