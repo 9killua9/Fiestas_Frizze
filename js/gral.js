@@ -11,8 +11,7 @@ $nImagen = 0;
 $(document).ready(function(){
     /* clase .nada hace que no se envien datos ni funcionen clicks 
 ==================================================================== */    
-    cargaLoadDelSite('modulo/inicio.php');
-    cargaInicio();   
+    cargaLoadDelSite("modulo/inicio.php?h=0"); 
 });
 
 /* Comienzo de las funciones 
@@ -73,8 +72,12 @@ function muestraEvento(id, cual)
 }
 function cargaInicio()
 {
+    $("select[name=cambiaProvincia]").bind("change",function(){
+        provContDonde($(this).val(),0);
+        console.log($(this).val())
+    });
     $(".logo").click(function(){
-       cargaLoadDelSite("modulo/inicio.php"); 
+       cargaLoadDelSite("modulo/inicio.php?h=0"); 
     });
 }
 function buscaPorMes(mes)

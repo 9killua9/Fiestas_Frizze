@@ -24,19 +24,20 @@ h1{font-size: 22px;font-weight: bold; color:#ffffff !important;}
 
 /* Titulos
 =================================================================== */
- .contenedor{width: 800px; height: auto; background: url('../template/fondo/fondo.jpg') repeat-y scroll 0 0 transparent; }
+ .contenedor{width: 100%; height: 100%; background: url('../template/fondo/fondo.jpg') repeat-y scroll 0 0 transparent; }
 
 /* Seccion Banner
 =================================================================== */
-.banner{width: 800px; } 
+.banner{width: 100%; } 
 .logo{margin-left: 20px; margin-top: 23px; }
 /* Seccion Home
 =================================================================== */
 .header{margin-top: 20px;} 
-.barraAzul{width: 800px; height: 36px; background: url('../template/barras/barraazul.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
-.barraNaranja{width: 800px; height: 36px; background: url('../template/barras/barranaranja.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
+.barraAzul{width: 100%; height: 36px; background: url('../template/barras/barraazul.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
+.barraNaranja{width: 100%; height: 36px; background: url('../template/barras/barranaranja.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
 .volverEventos{color: #FFFFFF; margin-right: 32px; margin-top: 9px;}
 .frizzeFiestaMargen{margin-left: 50px; margin-top: 6px; }
+#cuerpoCargaContenido{width:100%; height:100%;}
 /*box izquierdo*/
 #cuerpoIzquierdoFF{width:486px; border-right: 1px solid #000000;box-shadow: 1px 5px 30px #000000;height: auto;}
 .contImgFF{margin-left: 37px; margin-top: 26px;width:417px;height:314px;background-color:#3b3b3b;border-radius: 12px;-webkit-border-radius: 12px;-moz-border-radius: 12px;-ms-border-radius: 12px;-o-border-radius: 12px;overflow:hidden;text-align: center;}
@@ -63,10 +64,10 @@ h1{font-size: 22px;font-weight: bold; color:#ffffff !important;}
 .volverEventosPasados{color: #FFFFFF; font-size: 18px; font-weight: bold; margin-right: 42px; margin-top: 9px;}
 
 /*	HOME		*/
-.sombraFondo{background-color: #000000; height: 570px !important; margin-top: 16px; opacity: 0.5; position: absolute; width: 800px; z-index: 1;}
-.contieneElCUerpoDelSitio{ position: relative; width: 800px; z-index: 10;}
-.slideW100{width:1800px;}
-.contenedorOverlowHidden{overflow: hidden; width: 800px;height: 232px;}
+.sombraFondo{background-color: #000000; height: 570px !important; margin-top: 16px; opacity: 0.5; position: absolute; width: 100%; z-index: 1;}
+.contieneElCUerpoDelSitio{ position: relative; width: 100%; z-index: 10;}
+.slideW100{width:1100%;}
+.contenedorOverlowHidden{overflow: hidden; width: 100%;height: 232px;}
 .buscadorImagen{margin-left: 19px; margin-top: 6px;}
 .buscadorInput{ background-color: #9E949A; border: medium none; height: 22px; margin-left: 6px; margin-top: 3px; width: 147px; color:#3b3b3b; font-size:16px;}
 .buscadorInput:focus{ color:#000000;}
@@ -118,7 +119,7 @@ h1{font-size: 22px;font-weight: bold; color:#ffffff !important;}
 .verGaleria{color:#fff;font-size: 12px;margin-left:53px;margin-top:6px;}
 
 /*	inicio	*/
-.contenedorInicio{width: 800px;}
+.contenedorInicio{width: 100%;}
 .contenedorTituloTextoParrafoInicio{width:471px; margin-top: 56px;}
 .contTituloTexhoInicio{margin-left:0px; margin-top: 2px;}
 .contTituloTexhoInicio h2{color: #fff; margin-left: 32px; font-size: 16px;}
