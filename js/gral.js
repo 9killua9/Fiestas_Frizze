@@ -2,7 +2,7 @@
 
 /* Declaracion de variables
 ============================ */
-$url     = 'php/ajax.php';
+$url     = 'http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
 
@@ -71,11 +71,13 @@ function muestraEvento(id, cual)
    cargaLoadDelSite("modulo/"+cual+"?id="+id);
 }
 function cargaInicio()
-{
-    $("select[name=cambiaProvincia]").bind("change",function(){
-        provContDonde($(this).val(),0);
-        console.log($(this).val())
+{   
+    $("form[name=cargaInicio]").submit(function(a){
+            a.preventDefault();
+            provContDonde($("select[name=cambiaProvincia]").val(),0);
+
     });
+    
     $(".logo").click(function(){
        cargaLoadDelSite("modulo/inicio.php?h=0"); 
     });
