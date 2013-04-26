@@ -2,7 +2,7 @@
 
 /* Declaracion de variables
 ============================ */
-$url     = 'http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/php/ajax.php';
+$url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
 
