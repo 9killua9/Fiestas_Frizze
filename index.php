@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+	<html lang="en"> 
+<!--<![endif]-->
+<head>
+	<!-- Necesidade basicas de la pagina
+================================================== -->
+	<meta charset="utf-8">
+	<title>Frizze</title>
+
+	<!-- CSS
+================================================== -->
+	<link type="text/css" rel="stylesheet" href="css/adaptable/base.css">
+
+	<link type="text/css" rel="stylesheet" href="css/adaptable/layout.css">
+	<link type="text/css" rel="stylesheet" href="css/gral.css">
+	<link type="text/css" rel="stylesheet" href="css/site.css?v=0.0">
+	
+	<!-- JS
+================================================== -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/lmf/lmf.js"></script>
+	<script type="text/javascript" src="js/gral.js?v=1.2"></script>
+	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+        var geocoder;
+        var map;
+        var markersArray = [];
+        var marker;
+        //var infowindow = new google.maps.InfoWindow();
+
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var myOptions = {
+            zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("mapaMod"), myOptions);
+
+            
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                
+                placeMarker(event.latLng);
+            });
+            
+            var styles = [
+					    {
+					      stylers: [
+					        { hue: "#560a52" },
+					        { saturation: 40 }
+					      ]
+					    },{
+					      featureType: "road",
+					      elementType: "geometry",
+					      stylers: [
+					        { lightness: 100 },
+					        { visibility: "simplified" }
+					      ]
+					    },{
+					      featureType: "road",
+					      elementType: "labels",
+					      stylers: [
+					        { visibility: "on" },
+					        { color: "#8b8b8b" },
+					        { weight: "0.1" }
+					      ]
+					    }
+					  ];
+
+					  map.setOptions({styles: styles});
+        }
+
+        function codeAddress(dir) {
+            var address = dir+', Argentina';//document.getElementById("address").value;
+            geocoder.geocode({ 'address': address }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    clearOverlays();
+
+                    //document.getElementById("address").value = results[0]['formatted_address'];
+                    //document.getElementById("latlong").innerText = results[0].geometry.location;
+                    map.setCenter(results[0].geometry.location);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        title: results[0]['formatted_address'],
+                        position: results[0].geometry.location,
+                        animation: google.maps.Animation.DROP,
+                        icon:'/clientes/frizze/facebook/fiestas_frizze/template/googlemaps/pinx.png'
+                    });
+/*
+                    infowindow.setContent(results[1].formatted_address);
+                    infowindow.open(map, marker);
+*/
+                    markersArray.push(marker);
+
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+        }
+
+        function placeMarker(location) {
+
+            geocoder.geocode({ 'latLng': location }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[1]) {
+                        clearOverlays();
+
+                        document.getElementById("address").value = results[1].formatted_address;
+                        document.getElementById("latlong").innerText = results[0].geometry.location;
+                        marker = new google.maps.Marker({
+                            position: location,
+                            title: results[1].formatted_address,
+                            map: map,
+                            animation: google.maps.Animation.DROP
+                        });
+                        /*infowindow.setContent(results[1].formatted_address);
+                        infowindow.open(map, marker);*/
+
+                        markersArray.push(marker);
+
+                        /*google.maps.event.addListener(marker, 'click', toggleBounce);*/
+
+                        map.setCenter(location);
+
+                    }
+                } else {
+                    alert("Geocoder failed due to: " + status);
+                }
+            });
+        }
+        function clearOverlays() {
+            if (markersArray) {
+                for (i in markersArray) {
+                    markersArray[i].setMap(null);
+                }
+            }
+        }
+        function toggleBounce() {
+
+            if (marker.getAnimation() != null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- Inicio del documento
+================================================== -->
+
+<div class="contenedor floatLeft" style="border-radius: 12px; margin-left: 3px; box-shadow: 0px 0px 4px 1px #000000; border: 2px solid #ffffff; margin-top: 9px;padding-bottom:5px;">
+	<div id="banner" class="floatLeft">
+		<img src="template/logo/logo.png" class="floatLeft logo" alt="FRIZZE" />
+	</div>
+	<div id="cuerpoCargaContenido" class="floatLeft">
+		
+	</div> <!-- contenedor General -->
+</div>
+
+</body>
+</html>

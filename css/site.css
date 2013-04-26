@@ -1,0 +1,147 @@
+/**
+ *@author: Leandro Salar - Marcelo Salar
+ *@empresa: Reiatsu.com.ar
+ *@web: reiatsu.com.ar
+ *@data: Framework .2
+ *
+
+/* Datos Generales inicio del doc.
+=================================================================== */
+*{color:#1b1b1b;} 
+body { overflow: hidden !important;} 
+h1{font-size: 22px;font-weight: bold; color:#ffffff !important;}
+
+ /* Fuentes
+=================================================================== */
+@font-face {font-family: 'futuramedium', url('../fonts/futuramedium.ttf') format('ttf'); }
+@font-face {
+	/* Para Internet Explorer */ 
+	font-family: 'futuramedium'; 
+	/* Fuente del Moz y resto */ 
+	src: local('../fonts/futuramedium'), 
+	url('../fonts/futuramedium.ttf') format('Truetype'); 
+}
+
+/* Titulos
+=================================================================== */
+ .contenedor{width: 800px; height: auto; background: url('../template/fondo/fondo.jpg') repeat-y scroll 0 0 transparent; }
+
+/* Seccion Banner
+=================================================================== */
+.banner{width: 800px; } 
+.logo{margin-left: 20px; margin-top: 23px; }
+/* Seccion Home
+=================================================================== */
+.header{margin-top: 20px;} 
+.barraAzul{width: 800px; height: 36px; background: url('../template/barras/barraazul.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
+.barraNaranja{width: 800px; height: 36px; background: url('../template/barras/barranaranja.png') no-repeat scroll 0 0 transparent; margin-top:13px;}
+.volverEventos{color: #FFFFFF; margin-right: 32px; margin-top: 9px;}
+.frizzeFiestaMargen{margin-left: 50px; margin-top: 6px; }
+/*box izquierdo*/
+#cuerpoIzquierdoFF{width:486px; border-right: 1px solid #000000;box-shadow: 1px 5px 30px #000000;height: auto;}
+.contImgFF{margin-left: 37px; margin-top: 26px;width:417px;height:314px;background-color:#3b3b3b;border-radius: 12px;-webkit-border-radius: 12px;-moz-border-radius: 12px;-ms-border-radius: 12px;-o-border-radius: 12px;overflow:hidden;text-align: center;}
+.imgFF{} 
+.contTituloFechaFF{} 
+.fechaTextoFF{width: 417px; margin-left: 37px; margin-top: 20px; } 
+.fechaTextoFF h2{font-family: 'futuramedium'; font-size: 16px; color: #fff; } 
+.conDiaFechFF{margin-top: 11px; margin-left: 10px; }
+.diaFF, .fechaFF{font-family: 'futuramedium'; font-size: 12px; color: #909090; } 
+.conMeGustaFF{} 
+.conEnviarFF{} 
+.conParrafoFF{font-family: arial; font-size: 12px; color: #fff; } 
+.conMegEnvFF{margin-top: 2px; margin-left: 1px; }
+.conParrafoFF p{margin-left: 35px; color:#ffffff;width: 420px; text-align: justify; font-size: 13px;letter-spacing: 1px; overflow-x:hidden;overflow-y:auto;height: 137px;}
+.tituloUbicacion{margin-top:23px;margin-bottom:9px;}
+.divisor{border-color:#3b3b3b;margin-left:-51px;}
+.muestraDireccion{color:#f0f0f0;padding:13px 0 7px;font-size: 17px;}
+.futura{font-family:"futuramedium";  text-rendering: optimizeLegibility;}
+
+#cuerpoDerechoFF{width: 262px; padding: 0 0 0 40px; margin-left: 10px;}
+.seisSieteSeisOcho{width:67px; height:68px; border:1px solid #999999; margin:0 12px 12px 0;}
+.menos51px{margin-left: -21px; text-transform: uppercase;font-size: 12px;}
+.muestraImagenes img{width:92px; height: 90px;}
+.volverEventosPasados{color: #FFFFFF; font-size: 18px; font-weight: bold; margin-right: 42px; margin-top: 9px;}
+
+/*	HOME		*/
+.sombraFondo{background-color: #000000; height: 570px !important; margin-top: 16px; opacity: 0.5; position: absolute; width: 800px; z-index: 1;}
+.contieneElCUerpoDelSitio{ position: relative; width: 800px; z-index: 10;}
+.slideW100{width:1800px;}
+.contenedorOverlowHidden{overflow: hidden; width: 800px;height: 232px;}
+.buscadorImagen{margin-left: 19px; margin-top: 6px;}
+.buscadorInput{ background-color: #9E949A; border: medium none; height: 22px; margin-left: 6px; margin-top: 3px; width: 147px; color:#3b3b3b; font-size:16px;}
+.buscadorInput:focus{ color:#000000;}
+.W571{ width: 532px; border-right: 1px solid #000000;box-shadow: 6px 5px 24px #000000; overflow:hidden;}
+.w118X18{ width: 118px;	height: 18px;}
+.w180{ width: 159px; margin-left: 9px;}
+.W257X112{ width: 247px;height: 115px;	margin-left: 18px; cursor:pointer;}
+.miniImagenFiesta{	width: 74px;height: 72px; border-radius: 12px; border:1px solid #cecece; background-color:#3b3b3b;}
+
+.flechaTop{ margin-top: 12px;margin-left: 247px;}
+.conFlechaTop{ width: 532px; height: 30px;cursor: pointer; overflow:hidden;}
+.flechaBottom{ margin-left: 247px; margin-top: 9px;}
+.conFlechaBottom{width: 532px;height: 30px;cursor: pointer; overflow:hidden;}
+.diaDeLaSemanaFiesta{ color: #FFFFFF; font-size: 16px; font-weight: bold;}
+.nombreDelBoliche{ color: #FFFFFF; font-size: 13px; }
+.direccionDelBoliche, .provinciaDelBoliche { color: #FFFFFF; font-size: 10px; line-height: 14px;}
+.slideContenedor{height: 225px;overflow: hidden;margin-top: 44px;}
+.slideContenedorDesliza{margin-top: 0px;margin-left:17px;}
+.textoBuscarEventos{font-size: 14px; color: #fff;margin-left: 16px;margin-top: 18px;}
+.buscadorFrizze{background: url('../template/home/buscador.png') no-repeat scroll 0 0 transparent; width: 197px; height: 29px;	margin-left: 16px;	margin-top: 2px;}
+.w227{	width: 227px;}
+#contenedorMesesDelAno{	background: url('../template/home/selector_meses.png') no-repeat scroll 0 0 transparent;width: 207px;height: 50px;margin-left: 15px;margin-top: 18px;}
+.mesesDelAno{ width: 159px;margin-top: 1px;overflow: hidden;height: 35px;position: relative;z-index: 40;}
+.textoMese{	width: 159px;height: 35px; background-color:#922349;	border-bottom: 1px solid #7b1837; cursor:pointer;}
+.clickReemplazlocajitaEventoBoliche {cursor: pointer;}
+.textoMese :hover{background-color:#7b1837; width: 159px;height: 35px;margin-top: 0;}
+.textoMese p:hover{width: 159px; padding-top: 9px;}
+.textoMese p{width: 159px;	margin-top: 9px;text-align: center;	font-size: 13px;color: #fff;}
+
+.flechaDespliega{width: 37px;height: 35px;margin-left: 0px; margin-top: 1px; cursor: pointer;}
+.flechaDespliega img{margin-left: 13px; margin-top: 12px;}
+.conSombraFlechaHomeTop{width: 100px;position: absolute;}
+.sombraFlechaHomeTop{width: 532px;}
+.conSombraFlechaHomeBottom{	width: 161px; position: absolute; margin-top: 240px;}
+.sombraFlechaHomeBottom{width: 532px;}
+.frizzeFiestaMargenEventos_pasados{margin-left: 50px; margin-top: 10px;}
+.conSombraVerticalIzquierda{position: absolute;}
+.selectoFlechaVerticalIzquierda{height: 235px;}
+.selectoFlechaVerticalDerecha{ cursor: pointer; float: right; height: 230px; position: relative; width: 33px; z-index: 333;}
+.conSombraVerticalDerecha{position: absolute;}
+.sombraVerticalDerecha{	height: 235px; margin-top: 35px; margin-left: 767px; position: relative; z-index: 12;}
+.sombraVerticalIzquierdaCursor{margin-left: 10px;margin-top: 115px;}
+.sombraVerticalDerechaCursor{margin-top: 115px; margin-left: 10px;}
+.sombraVerticalIzquierda{height: 230px; margin-top: 35px; position: relative; z-index: 12; cursor: pointer; width: 30px;}
+.cajitaEventoBoliche{width: 265px;border-right: 1px solid #000000;box-shadow: -8px 0px 15px #0B0B08;height: 233px;position: relative;z-index: 10;}
+.imagenBoliche{	width: 144px;height: 100px;margin-left:53px;margin-top:40px;border-radius: 12px; border:1px solid #cecece; background-color:#3b3b3b;}
+.nombreBoliche{color:#fff;font-size: 15px;margin-left:53px;margin-top:12px;}
+.fechaBoliche{color: #999999; font-size: 14px; margin-left: 8px; margin-top: 12px;}
+.verGaleria{color:#fff;font-size: 12px;margin-left:53px;margin-top:6px;}
+
+/*	inicio	*/
+.contenedorInicio{width: 800px;}
+.contenedorTituloTextoParrafoInicio{width:471px; margin-top: 56px;}
+.contTituloTexhoInicio{margin-left:0px; margin-top: 2px;}
+.contTituloTexhoInicio h2{color: #fff; margin-left: 32px; font-size: 16px;}
+.contTituloTexhoInicio p{color: #fff; margin-left: 32px; margin-top: -8px;  font-size: 25px;}
+.buscaLaQueTeQuedaMasCerca{
+	background: url('../template/inicio/recuadro_azul.png') no-repeat scroll 0 0 transparent;
+	width: 428px;
+	height: 50px;
+	margin-top: 2px;margin-left: 32px;
+}
+.buscaLaQueTeQuedaMasCerca p{ font-size: 19px; font-weight: bold; margin-left: 17px; margin-top: 9px;}
+.contenedoParrafoInicio{ margin-top: 57px; margin-left: 82px;}
+.contenedoParrafoInicio p{color: #fff; font-size: 13px; margin-left:2px; margin-top: 2px; width: 301px; text-align: left;}
+.contEncierraMapa{width: 328px;}
+.resplandorMapa{background: url('../template/inicio/fondo_mapa.png') no-repeat scroll 0 0 transparent; width: 311px;height: 649px;margin-top: -50px;}
+#tituBol{text-transform: uppercase;}
+.avisoEmail{color: #ffffff; font-size: 11px; }
+.aviso{height: 16px !important; padding: 9px; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background-color: #d2d2d2 !important;color:#000000 !important; text-shadow: 1px 1px #ffffff !important; width: 86% !important; border: none; opacity: 0.65; font-size: 12px;}
+.button1{margin-right:17px;margin-top:12px;font-family: Verdana, Geneva, sans-serif; font-size: 11px; color: #FFF; padding: 9px; background: #102a4f; text-shadow: 0px 1px 0px #000; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;cursor: pointer; border:none;} 
+.button1:hover {background: #a33f3a; }
+.contenedorImagenMini img{top:-50%;left:-50%; position:relative;};
+#mapaMod,#mapaDeGoogle{border-radius: 12px;-webkit-border-radius: 12px;-moz-border-radius: 12px;}
+/* VELIDADO*/
+.campoAvisoEmailVacio p, .campoAvisoEmailIncorrecto p{ color: #fff;font-family: tahoma;font-size: 12px;margin-top: 21px;text-align: center;width: 170px;}
+.campoAvisoEmailVacio, .campoAvisoEmailIncorrecto{background: url('../template/error-de-mail.png') no-repeat scroll 0 0 transparent;margin-top: -3px;margin-left: -4px;width: 176px;height: 48px;}
+.repEstilo{ width: 247px;height: 115px;	margin-left: 18px; cursor:pointer;}
